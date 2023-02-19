@@ -1,0 +1,42 @@
+.background-start {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo-start {
+    max-height: 576px;
+    height: auto;
+    max-width: 756px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.title-start {
+    max-width: 446px;
+    max-height: 293px;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    top: 50px;
+    left: 120px;
+    z-index: 3;
+}
+
+.button-start {
+    max-width: 150px;
+    max-height: 150px;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    top: 430px;
+    left: 258px;
+    z-index: 4;
+}
