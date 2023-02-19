@@ -1,26 +1,27 @@
 import classNames from 'classnames/bind';
 import styles from './Start.module.scss';
 import images from '~/assets/image';
+import { useSetRecoilState } from 'recoil';
+import { actions, states } from '~/recoil';
 const cx = classNames.bind(styles);
 
 export default function Start() {
+    const setState = useSetRecoilState(states.handleGameState);
+    const handleClickStart = () => {
+        setState(actions.setStart(false));
+        setState(actions.setLoading(true));
+    };
     return (
-        <div style={{ position: 'relative' }}>
+        <div className={cx('DivContainer')} style={{ position: 'relative', height: '100vh' }}>
+            <img className={cx('background-start')} src={images.titleBackground} alt="" draggable="false"></img>
+            <img className={cx('logo-start')} src={images.logoStart} alt="" draggable="false"></img>
+            <img className={cx('title-start')} src={images.titleGame} alt="" draggable="false"></img>
             <img
-                style={{ position: 'absolute', zIndex: 2, height: 'auto', left: 80 }}
-                alt=""
-                src={images.titleGame}
-            ></img>
-            <img style={{ position: 'absolute', width: '100%' }} alt="" src={images.titleBackground}></img>
-            <img
-                style={{ position: 'absolute', zIndex: 2, height: 'auto', bottom: 0, right: 0 }}
-                alt=""
-                src={images.logoStart}
-            ></img>
-            <img
-                style={{ position: 'absolute', zIndex: 2, height: 'auto', bottom: 212, left: 215 }}
-                alt=""
+                className={cx('button-start')}
                 src={images.buttonStart}
+                alt=""
+                draggable="false"
+                onClick={handleClickStart}
             ></img>
         </div>
     );
