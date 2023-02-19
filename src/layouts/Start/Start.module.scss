@@ -9,14 +9,15 @@
 }
 
 .logo-start {
-    max-height: 576px;
+    max-height: 690px;
     height: auto;
-    max-width: 756px;
+    max-width: 907px;
     width: 100%;
     position: fixed;
-    bottom: 0;
+    bottom: -50px;
     right: 0;
     z-index: 2;
+    animation: mover 0.8s infinite alternate;
 }
 
 .title-start {
@@ -39,4 +40,13 @@
     top: 430px;
     left: 258px;
     z-index: 4;
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
 }
