@@ -40,6 +40,7 @@
     top: 430px;
     left: 258px;
     z-index: 4;
+    animation: scale 1s alternate infinite ease-in;
 }
 
 @keyframes mover {
@@ -48,5 +49,14 @@
     }
     100% {
         transform: translateY(-20px);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1.1);
     }
 }
