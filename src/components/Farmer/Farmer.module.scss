@@ -1,0 +1,20 @@
+.farmer-img {
+    position: fixed;
+    z-index: 3;
+    bottom: 120px;
+    right: 360px;
+    width: 90px;
+    transition: 500ms cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.farmer-onboat1 {
+    bottom: 209px;
+    right: 560px;
+    width: 70px;
+}
+
+.farmer-onboat2 {
+    bottom: 190px;
+    right: 645px;
+    width: 70px;
+}

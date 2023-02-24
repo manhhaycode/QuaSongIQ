@@ -6,7 +6,7 @@ import { actions, states } from '~/recoil';
 const cx = classNames.bind(styles);
 
 export default function Start() {
-    const setState = useSetRecoilState(states.handleGameState);
+    const setState = useSetRecoilState(states.handleGameLayout);
     const handleClickStart = () => {
         setState(actions.setStart(false));
         setState(actions.setPlaying(true));
