@@ -9,7 +9,7 @@ export default function Start() {
     const setState = useSetRecoilState(states.handleGameState);
     const handleClickStart = () => {
         setState(actions.setStart(false));
-        setState(actions.setLoading(true));
+        setState(actions.setPlaying(true));
     };
     return (
         <div className={cx('DivContainer')} style={{ position: 'relative', height: '100vh' }}>

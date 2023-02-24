@@ -2,9 +2,39 @@ import { atom, selector } from 'recoil';
 
 const defaultData = {
     start: true,
-    loading: false,
     playing: false,
-    stepPlaying: [],
+    tiger: {
+        river: false,
+        onBoat: {
+            status: false,
+            pos: 0,
+        },
+    },
+    sheep: {
+        river: false,
+        onBoat: {
+            status: false,
+            pos: 0,
+        },
+    },
+    carot: {
+        river: false,
+        onBoat: {
+            status: false,
+            pos: 0,
+        },
+    },
+    farmer: {
+        river: false,
+        onBoat: {
+            status: false,
+            pos: 0,
+        },
+    },
+    seatEmpty: {
+        first: true,
+        second: true,
+    },
 };
 
 export const gameState = atom({
@@ -27,16 +57,53 @@ export const handleGameState = selector({
                     start: action.payload,
                 });
                 break;
-            case 'SET_LOADING':
-                set(gameState, {
-                    ...states,
-                    loading: action.payload,
-                });
-                break;
             case 'SET_PLAYING':
                 set(gameState, {
                     ...states,
                     playing: action.payload,
+                });
+                break;
+
+            case 'SET_TIGER_ONBOAT':
+                set(gameState, {
+                    ...states,
+                    tiger: {
+                        river: states.tiger.river,
+                        onBoat: action.payload,
+                    },
+                });
+                break;
+            case 'SET_FARMER_ONBOAT':
+                set(gameState, {
+                    ...states,
+                    farmer: {
+                        river: states.farmer.river,
+                        onBoat: action.payload,
+                    },
+                });
+                break;
+            case 'SET_SHEEP_ONBOAT':
+                set(gameState, {
+                    ...states,
+                    sheep: {
+                        river: states.sheep.river,
+                        onBoat: action.payload,
+                    },
+                });
+                break;
+            case 'SET_CAROT_ONBOAT':
+                set(gameState, {
+                    ...states,
+                    carot: {
+                        river: states.carot.river,
+                        onBoat: action.payload,
+                    },
+                });
+                break;
+            case 'SET_SEAT_EMPTY':
+                set(gameState, {
+                    ...states,
+                    seatEmpty: action.payload,
                 });
                 break;
             default:
