@@ -1,8 +1,6 @@
 import { atom, selector } from 'recoil';
 
 const defaultData = {
-    start: true,
-    playing: false,
     tiger: {
         river: false,
         onBoat: {
@@ -37,9 +35,46 @@ const defaultData = {
     },
 };
 
+const defaultDataGameLayout = {
+    start: true,
+    playing: false,
+};
+
+export const gameLayout = atom({
+    key: 'layoutGame',
+    default: defaultDataGameLayout,
+});
+
 export const gameState = atom({
     key: 'stateGame',
     default: defaultData,
+});
+
+export const handleGameLayout = selector({
+    key: 'handleGameLayout',
+    get: ({ get }) => {
+        const states = get(gameLayout);
+        return states;
+    },
+    set: ({ get, set }, action) => {
+        const states = get(gameLayout);
+        switch (action.type) {
+            case 'SET_START':
+                set(gameLayout, {
+                    ...states,
+                    start: action.payload,
+                });
+                break;
+            case 'SET_PLAYING':
+                set(gameLayout, {
+                    ...states,
+                    playing: action.payload,
+                });
+                break;
+            default:
+                break;
+        }
+    },
 });
 
 export const handleGameState = selector({
@@ -51,19 +86,6 @@ export const handleGameState = selector({
     set: ({ get, set }, action) => {
         const states = get(gameState);
         switch (action.type) {
-            case 'SET_START':
-                set(gameState, {
-                    ...states,
-                    start: action.payload,
-                });
-                break;
-            case 'SET_PLAYING':
-                set(gameState, {
-                    ...states,
-                    playing: action.payload,
-                });
-                break;
-
             case 'SET_TIGER_ONBOAT':
                 set(gameState, {
                     ...states,

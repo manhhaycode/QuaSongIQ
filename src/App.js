@@ -5,11 +5,10 @@ import Start from './layouts/Start';
 import { states } from './recoil';
 
 function App() {
-    const stateLayout = useRecoilValue(states.gameState);
+    const stateLayout = useRecoilValue(states.gameLayout);
 
     return (
         <div className="App">
-            {console.log(stateLayout)}
             {stateLayout.start && <Start />}
             {stateLayout.playing && <Play />}
         </div>

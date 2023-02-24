@@ -12,5 +12,6 @@ const images = {
     tiger0: require('./tiger-sheet0.png'),
     tiger1: require('./tiger-sheet1.png'),
     carot: require('./carrot-sheet0.png'),
+    crossRiver: require('./go-sheet0.png'),
 };
 export default images;
