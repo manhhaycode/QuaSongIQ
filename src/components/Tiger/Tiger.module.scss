@@ -7,14 +7,39 @@
     transition: 500ms cubic-bezier(0.35, 0, 0.25, 1);
 }
 
+.tiger-img2 {
+    position: fixed;
+    z-index: 3;
+    bottom: 380px;
+    right: 750px;
+    width: 85px;
+    transition: 500ms cubic-bezier(0.35, 0, 0.25, 1);
+}
+
 .tiger-onboat1 {
     bottom: 190px;
     right: 555px;
     width: 110px;
+    z-index: 1000;
 }
 
 .tiger-onboat2 {
     bottom: 175px;
     right: 630px;
     width: 110px;
+    z-index: 1000;
+}
+
+.tiger-onboat12 {
+    bottom: 315px;
+    right: 645px;
+    z-index: 1000;
+    width: 85px;
+}
+
+.tiger-onboat22 {
+    bottom: 300px;
+    right: 720px;
+    z-index: 1000;
+    width: 85px;
 }
