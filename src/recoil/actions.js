@@ -26,9 +26,16 @@ export const setTigerOnBoat = (state) => {
     };
 };
 
-export const setSheepPosition = (state) => {
+export const setTigerRiver = (state) => {
     return {
-        type: 'SET_SHEEP_POSITION',
+        type: 'SET_TIGER_RIVER',
+        payload: state,
+    };
+};
+
+export const setSheepRiver = (state) => {
+    return {
+        type: 'SET_SHEEP_RIVER',
         payload: state,
     };
 };
@@ -54,9 +61,30 @@ export const setCarotOnBoat = (state) => {
     };
 };
 
+export const setCarotRiver = (state) => {
+    return {
+        type: 'SET_CAROT_RIVER',
+        payload: state,
+    };
+};
+
 export const setfarmerPosition = (state) => {
     return {
         type: 'SET_FARMER_POSITION',
+        payload: state,
+    };
+};
+
+export const setFarmerRiver = (state) => {
+    return {
+        type: 'SET_FARMER_RIVER',
+        payload: state,
+    };
+};
+
+export const setRaft = (state) => {
+    return {
+        type: 'SET_RAFT',
         payload: state,
     };
 };

@@ -7,6 +7,15 @@
     transition: 500ms cubic-bezier(0.35, 0, 0.25, 1);
 }
 
+.sheep-img2 {
+    position: fixed;
+    z-index: 3;
+    bottom: 350px;
+    right: 980px;
+    width: 70px;
+    transition: 500ms cubic-bezier(0.35, 0, 0.25, 1);
+}
+
 .sheep-onboat1 {
     bottom: 209px;
     right: 560px;
@@ -16,5 +25,17 @@
 .sheep-onboat2 {
     bottom: 190px;
     right: 645px;
+    width: 70px;
+}
+
+.sheep-onboat12 {
+    bottom: 315px;
+    right: 645px;
+    width: 70px;
+}
+
+.sheep-onboat22 {
+    bottom: 300px;
+    right: 720px;
     width: 70px;
 }

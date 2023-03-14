@@ -1,25 +1,35 @@
-import styles from './Moment.module.scss';
-import classNames from 'classnames/bind';
-import images from '~/assets/image';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { states } from '~/recoil';
 import Farmer from '~/components/Farmer';
 import Sheep from '~/components/Sheep';
 import Tiger from '~/components/Tiger';
 import Carot from '~/components/Carot';
-const cx = classNames.bind(styles);
+import Raft from '~/components/Raft';
+import ButtonGo from '~/components/ButtonGo';
+import { useEffect } from 'react';
+import { useRecoilCallback, useRecoilValue, useSetRecoilState } from 'recoil';
+import { actions, states } from '~/recoil';
 
 export default function Movement() {
-    const stateMovement = useSetRecoilState(states.handleGameState);
     const val = useRecoilValue(states.gameState);
+    const stateLayout = useRecoilCallback(useSetRecoilState(states.gameLayout));
 
+    useEffect(() => {
+        if (val.carot.river + val.farmer.river + val.sheep.river + val.tiger.river === 8) {
+            setTimeout(() => {
+                alert('You win');
+                stateLayout(actions.setStart(true));
+                stateLayout(actions.setPlaying(false));
+            }, 1000);
+        }
+        // eslint-disable-next-line
+    }, [val.carot, val.farmer, val.sheep, val.tiger, stateLayout]);
     return (
         <div className="DivCoreGameContainer">
-            <img alt="" className={cx('raft-img')} src={images.raftimage}></img>
+            <Raft />
             <Farmer />
             <Sheep />
             <Tiger />
             <Carot />
+            <ButtonGo />
         </div>
     );
 }
