@@ -61,8 +61,6 @@ export default function Sheep() {
             onClick={handleClickSheep}
             draggable="false"
             ref={refSheep}
-        >
-            {console.log(val)}
-        </img>
+        ></img>
     );
 }
