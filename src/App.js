@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import Play from './layouts/Play';
 import Start from './layouts/Start';
