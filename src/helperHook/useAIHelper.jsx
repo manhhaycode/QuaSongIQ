@@ -42,6 +42,7 @@ const useAIHelper = () => {
     const handleHelp = () => {
         const currentStatus = getStatus(val.tiger.river, val.sheep.river, val.carot.river, val.farmer.river);
         const path = renderPath(currentStatus);
+        stateMovement(actions.setHelp(true));
         for (let i = 0; i < path.length - 1; i++) {
             setTimeout(() => {
                 goStep(path[i], path[i + 1]);

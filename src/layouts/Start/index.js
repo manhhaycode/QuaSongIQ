@@ -8,10 +8,8 @@ const cx = classNames.bind(styles);
 export default function Start() {
     const setState = useSetRecoilState(states.handleGameLayout);
     const handleClickStart = () => {
-        setTimeout(() => {
-            setState(actions.setStart(false));
-            setState(actions.setPlaying(true));
-        }, 1000);
+        setState(actions.setStart(false));
+        setState(actions.setPlaying(true));
     };
     return (
         <div className={cx('DivContainer')} style={{ position: 'relative', height: '100vh' }}>

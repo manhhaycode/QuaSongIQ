@@ -37,6 +37,7 @@ const defaultData = {
         ref: null,
         pos: 1,
     },
+    help: false,
 };
 
 const defaultDataGameLayout = {
@@ -172,6 +173,17 @@ export const handleGameState = selector({
                 set(gameState, {
                     ...states,
                     raft: action.payload,
+                });
+                break;
+            case 'SET_PLAY_AGAIN':
+                set(gameState, {
+                    ...defaultData,
+                });
+                break;
+            case 'SET_HELP':
+                set(gameState, {
+                    ...states,
+                    help: action.payload,
                 });
                 break;
             default:
