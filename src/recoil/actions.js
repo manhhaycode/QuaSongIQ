@@ -102,3 +102,17 @@ export const setSeatEmpty = (state) => {
         payload: state,
     };
 };
+
+export const setPlayAgain = () => {
+    return {
+        type: 'SET_PLAY_AGAIN',
+        payload: null,
+    };
+};
+
+export const setHelp = (state) => {
+    return {
+        type: 'SET_HELP',
+        payload: state,
+    };
+};

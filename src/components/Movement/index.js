@@ -11,13 +11,17 @@ import { actions, states } from '~/recoil';
 export default function Movement() {
     const val = useRecoilValue(states.gameState);
     const stateLayout = useSetRecoilState(states.handleGameLayout);
+    const stateGame = useSetRecoilState(states.handleGameState);
 
     useEffect(() => {
-        if (val.carot.river + val.farmer.river + val.sheep.river + val.tiger.river === 8) {
-            alert('You win');
-            stateLayout(actions.setStart(true));
-            stateLayout(actions.setPlaying(false));
-        }
+        setTimeout(() => {
+            if (val.carot.river + val.farmer.river + val.sheep.river + val.tiger.river === 8) {
+                alert('You win');
+                stateLayout(actions.setStart(true));
+                stateLayout(actions.setPlaying(false));
+                stateGame(actions.setPlayAgain());
+            }
+        }, 1000);
         // eslint-disable-next-line
     }, [val.carot, val.farmer, val.sheep, val.tiger]);
     return (

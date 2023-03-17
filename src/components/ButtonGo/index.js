@@ -29,5 +29,9 @@ export default function ButtonGo() {
 
         setGo(actions.setRaft({ pos: val.raft.pos === 1 ? 2 : 1, ref: val.raft.ref }));
     };
-    return <img src={images.buttonGo} alt="" className={cx('btn-go')} draggable="false" onClick={handleClickGo}></img>;
+    return (
+        !val.help && (
+            <img src={images.buttonGo} alt="" className={cx('btn-go')} draggable="false" onClick={handleClickGo}></img>
+        )
+    );
 }
